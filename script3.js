@@ -5,77 +5,60 @@
 // premier permettant de cocher toutes les cases et le deuxième pour
 // décocher toutes les cases
 
-function GereCheckbox(className,etat){
-    var clist=document.getElementsByClassName(className);
+function input(idInput,typeInput,nameInput,parent){
+    var newInput = createElement('input');
+    newInput.id = idInput;
+    newInput.type = typeInput;
+    newInput.name = nameInput;
+    parent.appendChild(newInput);
+    return newInput;
+}
+
+function btn(hrefBtn,valueBtn,onclickBtn,typeBtn,classListBtn,parent){
+    var newBtn = createElement('Btn');
+    newBtn.href = hrefBtn;
+    newBtn.value = valueBtn;
+    newBtn.onclick = onclickBtn;
+    newBtn.type = typeBtn;
+    newBtn.classList = classListBtn;
+    parent.appendChild(newBtn);
+    return newBtn;
+}
+
+function gereCheckbox(className,etat){
+    var clist=document.getElementsByTagName(className);
     for (var i = 0; i < clist.length; ++i) {
         clist[i].checked = etat==1 ? "checked" : false; 
     }
 }
 
-var divtp3 = document.createElement('div');
-    divtp3.id = "divtp3";
-    divtp3.Class="text-center";
+// var divtp3 = document.createElement('div');
+//     divtp3.id = "divtp3";
+//     divtp3.classList="text-center";
 
-var form2 = document.createElement('form');
-    form2.class= "form";
-    form2.action='#'
+// var form2 = document.createElement('form');
+//     form2.class= "form";
+//     form2.action='#'
 
-var div1 = document.createElement('div');
-    div1.class="m-auto";
+// var div1 = document.createElement('div');
+//     div1.classList="m-auto";
 
-var input1 = document.createElement('input');
-    input1.type = "checkbox";
-    input1.name = "test1";
-    input1.id = 1;
 
-var input2 = document.createElement('input');
-    input2.type = "checkbox";
-    input2.name = "test2";
-    input2.id = 2;
+// var div2 = document.createElement('div');
+//     div2.classList="m-auto";
 
-var input3 = document.createElement('input');
-    input3.type = "checkbox";
-    input3.name = "test3";
-    input3.id = 3;
+// divtp3.appendChild(form2);
 
-var input4 = document.createElement('input');
-    input4.type = "checkbox";
-    input4.name = "test4";
-    input4.id = 4;
+// input(1,'checkbox','test1',div1)
+// input(2,'checkbox','test2',div1)
+// input(3,'checkbox','test3',div1)
+// input(4,'checkbox','test4',div1)
 
-var div2 = document.createElement('div');
-    div2.class="m-auto";
+// btn('#',"coche","GereCheckbox('chkbx','1');","submit","btn btn-success",div2);
+// btn('#',"decoche","GereCheckbox('chkbx','0');","submit","btn btn-danger",div2);
 
-var btn1 = document.createElement('button');
-    btn1.href="#";
-    btn1.value="coche";
-    btn1.onClick="GereCheckbox('chkbx','1');";
-    btn1.type="submit";
-    btn1.class="btn btn-success"
-    btn1.appendChild(document.createTextNode('tout cocher'));
+// form2.appendChild(div1);
 
-var btn2 = document.createElement('button');
-    btn2.href="#";
-    btn2.value="decoche";
-    btn2.onClick="GereCheckbox('chkbx','0');";
-    btn2.type="submit";
-    btn2.class="btn btn-danger"
-    btn2.appendChild(document.createTextNode('tout décocher'));
+// form2.appendChild(div2);
 
-divtp3.appendChild(form2);
-
-div1.appendChild(input1);
-div1.appendChild(input2);
-div1.appendChild(input3);
-div1.appendChild(input4);
-
-form2.appendChild(div1);
-
-div2.appendChild(btn1);
-div2.appendChild(btn2);
-
-form2.appendChild(div2);
-
-var childBody = document.body.firstChild;
-// On insert le bloc avant ce 1er child
-document.body.insertBefore(divtp3,childBody);
+// document.body.appendChild(divtp3);

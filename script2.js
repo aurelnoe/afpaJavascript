@@ -79,23 +79,22 @@ function br(parent){
 </div> */
 
 
-// // On crée l'élément conteneur
-// var divtp1 = div('divtp1','');
+// On crée l'élément conteneur
+var divtp1 = document.createElement('div');
+    divtp1.id = 'divtp1';
+    divtp1.classList = "text-center"
 
-// // On insère le tout dans divtp
-// text('Le ',divtp1);
-// strong('World Wide Web Consortium',divtp1);
-// text(', abrégé par le sigle ',divtp1);
-// strong('W3C',divtp1);
-// text(', est un ',divtp1);
-// a('#','#','Organisme de normalisation',divtp1);
-// text(' à but non-lucratif chargé de promouvoir la compatibilité des technologies du ',divtp1);
-// a('#','#','World Wide Web',divtp1);
+// On insère le tout dans divtp
+text('Le ',divtp1);
+strong('World Wide Web Consortium',divtp1);
+text(', abrégé par le sigle ',divtp1);
+strong('W3C',divtp1);
+text(', est un ',divtp1);
+a('#','#','Organisme de normalisation',divtp1);
+text(' à but non-lucratif chargé de promouvoir la compatibilité des technologies du ',divtp1);
+a('#','#','World Wide Web',divtp1);
 
-// var childBody = document.body.firstChild;
-// //On insert le bloc avant ce 1er child
-// document.body.insertBefore(divtp1,childBody);
-
+document.body.appendChild(divtp1);
 
 
 ///////////////////////Exercice 2
@@ -113,12 +112,9 @@ function br(parent){
     </form>
 </div> */
 
-//La méthode window.getComputedStyle() donne la  valeur calculée finale de toutes les propriétés CSS sur un élément.
-// var affiche = document.getElementById("affiche");
-// var masquer = document.getElementById("masquer");
-
 var divtp2 = document.createElement('div');
     divtp2.id = 'divtp2';
+    divtp2.classList = "text-center my-4"
 
 var formtp2 = form('multipart/form-data','post','upload.php',divtp2);
 
@@ -140,15 +136,31 @@ fieldtp2.appendChild(div1);
 
 document.body.appendChild(divtp2);
 
-divtp2.addEventListener('click', function (e) {
-    console.log(this.className)           // journalise le className de mon_element
-    console.log(e.currentTarget === this) // journalise `true`
-})
+var affichetp1 = document.getElementById("affichetp1");
+var masquertp1 = document.getElementById("masquertp1");
+var affichetp2 = document.getElementById("affichetp2");
+var masquertp2 = document.getElementById("masquertp2");
 
-afficheBt.addEventListener("click", () => {
-    if(getComputedStyle(divTP1).display != "none"){
-      divTP1.style.display = "none";
-    } else {
-      divTP1.style.display = "block";
+affichetp1.addEventListener("click", () => {
+    if(getComputedStyle(divtp1).display == "none"){
+      divtp1.style.display = "block";
     }
 }) 
+
+masquertp1.addEventListener("click", () => {
+    if(getComputedStyle(divtp1).display != "none"){
+    divtp1.style.display = "none";
+    }
+})
+
+affichetp2.addEventListener("click", () => {
+    if(getComputedStyle(divtp2).display == "none"){
+      divtp2.style.display = "block";
+    }
+}) 
+
+masquertp2.addEventListener("click", () => {
+    if(getComputedStyle(divtp2).display != "none"){
+    divtp2.style.display = "none";
+    }
+})

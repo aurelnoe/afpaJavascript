@@ -10,21 +10,24 @@
     <title>Document</title>
 </head>
 <body>
-<div>
-    <span>Coucou les loulous</span>
-    <br>
-    <a href="#">Clic ici si tu veux rien voir</a>
-    <br>
-    <strong>Magnifique</strong>
-    <br>
-    <img src="" alt="" class="border" whitdh="200px" height="200px">
-    <br>
-</div>
-
-<div>
-<button class="btn btn-success" onclick="gereBR('br')">Affiche BR</button>
-<button class="btn btn-danger" onclick="gereBR('br')">Masquer BR</button>
-</div>
+    <div style="text-align: center">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox">
+        </div>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox">
+        </div>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox">
+        </div>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox">
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success" onclick="gereCheckbox('input',1)">Cocher</button>
+        <button class="btn btn-danger" onclick="gereCheckbox('input',0)">Décocher</button>
+    </div>
 </body>
     <script src="script4.js" type="text/javascript"></script>
 </html>

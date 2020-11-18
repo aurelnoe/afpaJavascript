@@ -10,21 +10,14 @@
     <title>Document</title>
 </head>
 <body>
-<div>
-    <span>Coucou les loulous</span>
-    <br>
-    <a href="#">Clic ici si tu veux rien voir</a>
-    <br>
-    <strong>Magnifique</strong>
-    <br>
-    <img src="" alt="" class="border" whitdh="200px" height="200px">
-    <br>
-</div>
-
-<div>
-<button class="btn btn-success" onclick="gereBR('br')">Affiche BR</button>
-<button class="btn btn-danger" onclick="gereBR('br')">Masquer BR</button>
-</div>
 </body>
-    <script src="script4.js" type="text/javascript"></script>
+    <div style="text-align:center" class="my-4">
+        <button class="btn btn-success" id="affichetp1" >Afficher DivTP1</button>
+        <button class="btn btn-danger" id="masquertp1" >Masquer DivTP1</button> 
+    </div>
+    <div style="text-align:center" class="my-4">
+        <button class="btn btn-success" id="affichetp2" >Afficher DivTP2</button>
+        <button class="btn btn-danger" id="masquertp2" >Masquer DivTP2</button> 
+    </div>
+    <script src="script2.js" type="text/javascript"></script>
 </html>
