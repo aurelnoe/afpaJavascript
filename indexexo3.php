@@ -29,5 +29,5 @@
         <button class="btn btn-danger" onclick="gereCheckbox('input',0)">Décocher</button>
     </div>
 </body>
-    <script src="script4.js" type="text/javascript"></script>
+    <script src="script3.js" type="text/javascript"></script>
 </html>

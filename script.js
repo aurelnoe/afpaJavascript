@@ -63,3 +63,4 @@ function table_multiplication(nombre)
 
 nombre=window.prompt("Entrez le numéro de la table:","Saisir un entier ici");
 table_multiplication(nombre);
+

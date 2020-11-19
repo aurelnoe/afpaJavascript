@@ -10,21 +10,12 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container-fluid m-auto text-center">
-        <h1>Exercice 3 :</h1>
-        <table class="table table-dark dark-stripped m-auto w-100">
-      
-            <tr>
-                <td>ijfze</td>
-                <td>zerfzer</td>
-                <td>frezfc</td>
-                <td>ezff</td>
-                <td>ezfez</td>
-            </tr>
-               
-        </table>
-        <p></p>
+    <div id="divGrandFather" style="background-color:red; height:500px; width:500px">
+        <div id="divFather" style="background-color:green; height:300px; width:300px">
+            <div id="divSon" style="background-color:blue; height:200px; width:200px">
+            </div>
+        </div>
     </div>
 </body>
-    <script src="script4.js" type="text/javascript"></script>
+    <script src="script5.js" type="text/javascript"></script>
 </html>

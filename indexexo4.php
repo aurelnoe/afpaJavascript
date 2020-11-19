@@ -10,21 +10,21 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container-fluid m-auto text-center">
-        <h1>Exercice 3 :</h1>
-        <table class="table table-dark dark-stripped m-auto w-100">
-      
-            <tr>
-                <td>ijfze</td>
-                <td>zerfzer</td>
-                <td>frezfc</td>
-                <td>ezff</td>
-                <td>ezfez</td>
-            </tr>
-               
-        </table>
-        <p></p>
-    </div>
+<div>
+    <span>Coucou les loulous</span>
+    <br>
+    <a href="#">Clic ici si tu veux rien voir</a>
+    <br>
+    <strong>Magnifique</strong>
+    <br>
+    <img src="" alt="" class="border" whitdh="200px" height="200px">
+    <br>
+</div>
+
+<div>
+<button class="btn btn-success" id="show">Affiche BR</button>
+<button class="btn btn-danger" id="hide">Masquer BR</button>
+</div>
 </body>
     <script src="script4.js" type="text/javascript"></script>
 </html>
