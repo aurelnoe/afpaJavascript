@@ -31,34 +31,20 @@
 
         </table>
 
-        <input type="number">
-        <button>Afficher numero colonne</button>
-        <input type="number">
-        <button>Afficher numero ligne</button>
-        <input type="text">
-        <button>Afficher la valeur qui va modifier</button>
+        <input type="number" id="idRow" min="1" max="3" value="afficher numéro ligne">
+
+        <input type="number" id="idCol" min="1" max="2" value="afficher numéro col">
+
+        <input type="text" id="idText">
+
+        <button id="idBtn">Modifier la cellule</button>
 
     </body>
 
     <script src="jquery-3.5.1.min.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" src="jquery.js">
 
-    let indiceLigne = $("td");
-    let indiceCol = $("#myTable");
-    let newText = "AAAA";
-    
-    function changeContent(indiceLigne,indiceCol,newText)
-    {
-        $(indiceCol.ready(function(){
-            $(indiceLigne).each(function(){
-                var lastCol = $(this).html();
-                var replaceValue = lastCol.Append(newText);
-
-                $(this).html(replaceContent);
-            });
-        }))
         
-    }
 
     </script>
 </html>
