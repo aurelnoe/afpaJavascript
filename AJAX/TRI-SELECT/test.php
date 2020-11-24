@@ -3,22 +3,51 @@ include_once("Voiture.php");
 
 //créer 9 ou  10 voitures
 
-$voiture1 = new Voiture('A5','audi');
-$voiture2 = new Voiture('A6','audi');
-$voiture3 = new Voiture('A7','audi');
-$voiture4 = new Voiture('206','peugeot');
-$voiture5 = new Voiture('207','peugeot');
-$voiture6 = new Voiture('208','peugeot');
-$voiture7 = new Voiture('clio','renault');
-$voiture8 = new Voiture('megane','renault');
-$voiture9 = new Voiture('twingo','renault');
+$voitures = [
+    new Voiture('A5','AUDI'),
+    new Voiture('A6','AUDI'),
+    new Voiture('A7','AUDI'),
+    new Voiture('206','PEUGEOT'),
+    new Voiture('207','PEUGEOT'),
+    new Voiture('208','PEUGEOT'),
+    new Voiture('clio','RENAULT'),
+    new Voiture('megane','RENAULT'),
+    new Voiture('twingo','RENAULT')
+];
 
-$audi = array();
-$peugeot = array();
-$renault = array();
+$voituresRetournees = [];
 
-array_push($audi,$voiture1,$voiture2,$voiture3);
-array_push($peugeot,$voiture4,$voiture5,$voiture6);
-array_push($renault,$voiture7,$voiture8,$voiture9);
+//Affichage
+if (!empty($_GET) && isset($_GET["marque"]) && !isset($_GET["afficher"])) {
+    $voituresRetournees = filterVoitureParMarqueEtModele($voitures,$_GET["marque"]);
+    afficheOption($voituresRetournees);
+}else if (empty($_GET)) {
+        $voituresRetournees = $voitures;
+}else if ( isset($_GET["marque"]) && isset($_GET["modele"])) {
+    $voituresRetournees = filterVoitureParMarqueEtModele($voitures,$_GET["marque"],$_GET["modele"]);        
+}else if ( isset($_GET["marque"])) {
+    $voituresRetournees = filterVoitureParMarqueEtModele($voitures,$_GET["marque"]);
+}
 
-//var_dump($audi);
+foreach ($voitures as $voiture){
+    echo "<tr></td>" . $voiture->marque . "<td></td>" . $voiture->modele . "<td></tr>";
+}
+
+function afficheOption(){
+    echo "<option value=''>-- Selectionner un modèle --</option>";
+    foreach ($voituresRetournees as $voiture){
+        echo "<option value='" . $voiture->modele . "'>" . $voiture->modele . "</option>";
+    }
+}
+
+function filterVoitureParMarqueEtModeleEtModele(array $array,string $marque,string $modele=null){
+    $voituresRetournees = [];
+    foreach ($voitures as $voiture) {
+        if ($marque && $modele && $marque == $voiture->marque && $modele == $voiture->modele) {
+            $voituresRetournees[] = $voiture;
+        }else if ($modele && $marque == $voiture->marque){
+            $voituresRetournees[] = $voiture;
+        }
+    }
+    return $voituresRetournees;
+}

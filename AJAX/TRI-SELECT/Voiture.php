@@ -5,7 +5,7 @@ class Voiture
     public $modele;
     public $marque;
 
-    public function __construct($newModele,$newMarque)
+    public function __construct(string $newModele,string $newMarque)
     {
         $this->modele = $newModele;
         $this->marque = $newMarque;
